@@ -7,24 +7,48 @@
     <title>USD TO PKR</title>
 </head>
 <body style="margin-left: 5%;" > 
-    <h1>Currency Conversion USD TO PKR</h1>
-    <label> USD to PKR</label>
-        <input type="number" id="USD">
-        <br><br>
-        <button onclick="CurrencyCon()">Convert</button>
-       
-<h1 id="result"></h1>
+   <h1>Currency Converter</h1>
 
-    <script>
+        <label for="dollars">USD: </label>
+        <input type="text" name="" id="dollars" placeholder="Dollars">
 
-        
-        function CurrencyCon(){
-            let USD = document.getElementById("USD").value;
-            let PKR = 170.81;
-            let CONV = Number(USD) * Number(PKR);
+        <br>
+        <br>
 
-            document.getElementById("result").innerText = CONV;
-        }
+        <label for="rupees">PKR: </label>
+        <input type="text" name="" id="rupees" placeholder="Rupees">
+
+        <br>
+        <br>
+
+        <button onclick=convert()>Convert</button>
+
+<script>
+    function dollarToPkr(dollars){
+    let rups = dollars * 170;
+    return rups;
+}
+
+function pkrToDollars(pkr){
+    let usd = pkr / 170;
+    return usd;
+}
+
+function convert(){
+    if (document.getElementById("dollars").value && document.getElementById("rupees").value){
+        alert("Enter only one value at a time");
+    }
+    else if (document.getElementById("dollars").value){
+        let result = dollarToPkr(Number(document.getElementById("dollars").value));
+        document.getElementById("rupees").value = result;
+    }
+    else if (document.getElementById("rupees").value){
+        let result = pkrToDollars(Number(document.getElementById("rupees").value));
+        document.getElementById("dollars").value = result;
+    }
+}
+</script>
+
     </script>
     <br>
     <h1> Weather alert</h1>
