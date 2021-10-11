@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USD TO PKR</title>
+</head>
+<body style="margin-left: 5%;" > 
+    <h1>Currency Conversion USD TO PKR</h1>
+    <label> USD to PKR</label>
+        <input type="number" id="USD">
+        <br><br>
+        <button onclick="CurrencyCon()">Convert</button>
+       
+<h1 id="result"></h1>
+
+    <script>
+
+        
+        function CurrencyCon(){
+            let USD = document.getElementById("USD").value;
+            let PKR = 170.81;
+            let CONV = Number(USD) * Number(PKR);
+
+            document.getElementById("result").innerText = CONV;
+        }
+    </script>
+    <br>
+    <h1> Weather alert</h1>
+    <label>Temperature:- </label>
+    <input type="number" id="temp">      
+    <button onclick="Temperature()">done</button>
+    
+        <script>
+
+                function Temperature(){
+
+                    let temp = document.getElementById("temp").value;
+
+                            if(temp >= 25){
+                                alert("Don't Carry JAcket");
+                            }
+                            else if(temp>=1){
+                                alert("Carry Jacket, wheater is cold");
+                            }
+                            else{
+                                alert("Stay Home,its too cold outside");
+                            }
+
+                }
+
+
+        </script>
+        <br><br>
+        <h1> Grade alert</h1>
+        <label>Grade:- </label>
+        <input type="text" id="grd">      
+        <button onclick="Grade()">Click</button><br>
+       <h1 id="output" ></h1>
+        
+            <script>
+    
+                    function Grade(){
+    
+                        var marks = document.getElementById("grd").value;
+                        var result = document.getElementById("output");
+                      
+    
+                                  if(marks>=80 && marks<=90){
+                                 result.innerHTML = "Congo! You got 'A+1'";
+                                    
+                                  }
+                                   
+                                 else if(marks>=70 && marks<=79) {
+                                    result.innerHTML = "You got 'A' grade";
+                                 }
+                                else if(marks>=60 && marks<=69) {
+                                    result.innerHTML = "You got 'B' grade";
+                                }
+                                else if(marks>=50 && marks<=59) {
+                                    result.innerHTML = "You got 'D' grade";
+                                }
+                                else{
+                                    result.innerHTML = "Fail";
+                                 }
+    
+                    }
+    
+    
+            </script>    
+</body>
+</html>
